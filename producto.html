@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DittoStore</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <!--Logo DittoStore-->
+    <header class="header">
+        <a href="index.html"><img class="header__logo" src="img/Logotipo.png" alt="Logotipo"></a>
+    </header>
+
+    <!--Navegacion -->
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor animate__animated animate__slideInUp">
+        <h1>Onix Mate</h1>
+
+        <div class="pulsera">
+            <img class="pulsera__imagen" src="img/imgpro.jpg" alt="Imagen del producto">
+
+            <div class="pulsera__contenido">
+                <p>Una pequeña tira de cuero o cuentas es suficiente para darle un toque diferente a tu conjunto y te puede ayudar a expresar tu personalidad sin necesidad de hablar. Puedes usarla para mostrar que tienes una vida fuera de la oficina o que te interesan ciertas cosas.</p>
+
+                <form class="formulario">
+                    <select class="formulario__campo">
+                        <option disabled selected>Seleccionar Talla</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                    </select>
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+                    <input class="formulario__submit" type="submit" value="Agregar al Carrito">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <p class="footer__text">Ditto Tiendas - Todos los derechos reservados 2021</p>
+    </footer>

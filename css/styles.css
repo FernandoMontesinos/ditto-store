@@ -1,0 +1,266 @@
+:root{
+    --primario: #1c1c1c;
+    --secundario: #000;
+    --blanco: #fff;
+    --amarillo: #F5D655;
+
+
+    --fuentePrincipal: 'Montserrat', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*GLOBALES*/
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,h2,h3{
+    text-align: center;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+}
+
+h1{
+    font-size: 4rem;
+}
+
+
+/*HEADER*/
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    display: block;
+    margin: 0 auto;
+}
+
+
+/*NAVEGACION*/
+
+.navegacion{
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    padding: 1rem 0;
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    color: var(--blanco);
+    font-weight: 700;
+}
+
+.navegacion__enlace:last-of-type{
+    margin-right: 0;
+}
+
+.navegacion__enlace:hover,
+.navegacion__enlace--activo{
+    color: var(--amarillo);
+}
+
+/*GRID*/
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/*Productos*/
+
+.producto{
+    background-color: var(--secundario);
+    padding: 1rem;
+}
+
+.producto__imagen{
+    width: 100%;
+    
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--amarillo);
+}
+
+.producto__precio,
+.producto__nombre{
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*GRAFICOS*/
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafico--collares{
+    grid-row: 2 / 3;
+    background-image: url(../img/portada1.jpg);
+}
+
+.grafico--cola{
+    background-image: url(../img/portada2.jpg);
+    grid-row: 8 / 9;
+}
+
+/*FOOTER*/
+.footer{
+    background-color:var(--secundario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+/*Nosotros*/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+.nosotros__imagen{
+    grid-row: 1 / 2;
+    margin-bottom: 0;
+}
+
+.nosotros__contenido{
+    display: block;
+}
+
+/*ICONOS*/
+.por{
+    margin-top: 4.5rem;
+}
+
+.iconos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    gap: 2rem;
+ }
+
+
+/*PRODUCTO*/
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  
+  }
+  
+  .formulario__campo{
+     border: 1rem solid var(--secundario);
+     background-color: var(--primario);
+     color: var(--blanco);
+     font-family: 'Helvetica', sans-serif;
+     font-size: 2rem;
+     padding: 1rem;
+  }
+  
+  .formulario__submit{
+     background-color: var(--secundario);
+     border: none;
+     font-size: 2rem;
+     font-family: var(--fuentePrincipal);
+     padding: 2rem;
+     transition: background-color .3s ease-in-out;
+     grid-column: 1 / 3;
+     color: #fff;
+  }
+  
+  .formulario__submit:hover{
+      font-size: 2.4rem;
+      cursor: pointer;
+      background-color: var(--amarillo);
+      color: var(--secundario);
+  }
+
+.animate__animated.animate__backInLeft{
+    animation-delay: 2s;
+}
+
+
+
+
+@media (min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grafico--cola{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4 ;
+    }
+
+    .nosotros{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+    .nosotros__imagen{
+       grid-column: 2 / 3;
+    }  
+
+    
+    .iconos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 2rem;  
+    }
+    /*Parte del formulario*/
+     .pulsera{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+
+}
