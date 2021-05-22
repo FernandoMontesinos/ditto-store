@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="img/fav.ico">
 </head>
 
 <body>
@@ -21,22 +22,42 @@
 
     <!--Navegacion -->
     <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
-        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace navegacion__enlace--activo pri" href="index.html">Tienda</a>
+        <a class="navegacion__enlace se" href="nosotros.html">Nosotros</a>
+        <a href="#carrito" id="carrito-nav"><svg xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-shopping-cart" width="50" height="50" viewBox="0 0 24 24"
+                stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+            </svg></a>
     </nav>
 
 
     <!--Productos-->
     <main class="contenedor animate__animated animate__slideInUp">
         <h1>Nuestros Productos</h1>
-        <div class="grid">
+        <div class="grid" id="contenedor-productos">
             <!--Inicio del producto-->
-            <div class="producto">
+            <template id="producto-template">
+                <div class="producto">
+                    <img id="imagen" class="producto__imagen" src="img/img1.jpg" alt="Foto del producto">
+                    <div class="producto__informacion">
+                        <p id="nombre" class="producto__nombre">Valentino Guinda</p>
+                        <p class="producto__precio">S./<span id="precio">25</span> </p>
+                        <input id="btn" class="formulario__submit" type="submit" value="Agregar al Carrito">
+                    </div>
+                </div>
+            </template>
+            <!-- <div class="producto">
                 <a href="producto.html">
                     <img class="producto__imagen" src="img/img1.jpg" alt="Foto del producto">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Valentino Guinda</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -46,6 +67,7 @@
                     <div class="producto__informacion">
                         <p class="producto__nombre">Onix Mate</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -55,6 +77,7 @@
                     <div class="producto__informacion">
                         <p class="producto__nombre">Alonzo</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -64,6 +87,7 @@
                     <div class="producto__informacion">
                         <p class="producto__nombre">Ganzio</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -73,6 +97,7 @@
                     <div class="producto__informacion">
                         <p class="producto__nombre">Gaettano</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -82,6 +107,7 @@
                     <div class="producto__informacion">
                         <p class="producto__nombre">Franco</p>
                         <p class="producto__precio">S/25</p>
+                        <input class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </a>
             </div>
@@ -157,19 +183,81 @@
                     </div>
                 </a>
             </div>
+            <div class="producto">
+                <a href="producto.html">
+                    <img src="img/img15.jpg"  class="producto__imagen" alt="Foto del producto">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Crater</p>
+                        <p class="producto__precio">S/ 35</p>
+                    </div>
+                </a>
+            </div> -->
             <!--FINAL DE PRODUCTO-->
 
-            <div class="grafico grafico--collares"></div>
-            <div class="grafico grafico--cola"></div>
+            <!-- <div class="grafico grafico--collares"></div>
+            <div class="grafico grafico--cola"></div> -->
         </div>
     </main>
+
+    <section id="carrito">
+        <h1>Carrito de Compras</h1>
+        <div class="contenido-carrito">
+            <table class="table">
+                <thead>
+                    <tr class="heading-table">
+                        <th scope="col" class="heads">#</th>
+                        <th scope="col" class="heads">Producto</th>
+                        <th scope="col" class="heads">Cantidad</th>
+                        <th scope="col" class="heads">Acción</th>
+                        <th scope="col" class="heads">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="productos"></tbody>
+                <tfoot>
+                    <tr id="footer">
+                        <th scope="row" colspan="5" class="sin-productos">No hay productos Seleccionados</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+        <template id="carrito-template">
+            <tr>
+                <th scope="row">id</th>
+                <th id="carrito-nombre">Crater</th>
+                <th id="carrito-cantidad">1</th>
+                <td>
+                    <button class="agregar-carrito">
+                        +
+                    </button>
+                    <button class="restar-carrito">
+                        -
+                    </button>
+                </td>
+                <td>S/.<span>35</span></td>
+            </tr>
+        </template>
+        <template id="footer-template">
+            <tr class="result">
+            <th scope="row" colspan="1" class="total-scope">Total Productos</th>
+            <td>10</td>
+            <td>
+                <button class="vaciar-carrito" id="vaciar-carrito">
+                    Eliminar Todo
+                </button>
+            </td>
+            <td class="total">S/. <span>65</span></td>
+        </tr>
+        </template>
+    </section>
 
     <!--FOOTER-->
     <footer class="footer">
         <p class="footer__text">Ditto Tiendas - Todos los derechos reservados 2021</p>
     </footer>
 
-
+    <script src="index.js"></script>
 </body>
 
 </html>
