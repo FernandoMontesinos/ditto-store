@@ -5,12 +5,17 @@ const footer = document.getElementById('footer');
 const templateProducto = document.getElementById('producto-template').content; // Aca poner Content xd
 const templateFooter = document.getElementById('footer-template').content;
 const templateCarrito = document.getElementById('carrito-template').content;
+//const cantidadNavegacion = document.getElementById('cantidadnav').content;
 
 const fragment = document.createDocumentFragment();
 let carrito = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
+    if(localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        inyectarCarrito()
+    }
 })
 productoscaja.addEventListener('click', e => {
     agregarCarrito(e);
@@ -94,6 +99,8 @@ const inyectarCarrito = () => {
     productos.appendChild(fragment)
 
     pintarFooter();
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
 const pintarFooter = () => {
@@ -113,6 +120,7 @@ const pintarFooter = () => {
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
+    //cantidadNavegacion.querySelector('.cantidadnav').textContent = nCantidad
 
     const clone = templateFooter.cloneNode(true);
     fragment.appendChild(clone)

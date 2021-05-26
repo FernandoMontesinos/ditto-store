@@ -93,6 +93,14 @@ header{
     text-align: center;
 }
 
+.cantidad-navegacion{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
 .navegacion__enlace:last-of-type{
     margin-right: 0;
 }
