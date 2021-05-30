@@ -93,12 +93,27 @@ header{
     text-align: center;
 }
 
-.cantidad-navegacion{
+.cero-nav{
+    font-family: var(--fuentePrincipal);
+    color: var(--secundario);
+    background-color: var(--amarillo);
+    border: .5rem solid #F5D655;
+    border-radius: 50%;
+}
+
+.paren{
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 2rem;
-    padding: 0;
-    margin: 0;
+}
+
+
+#cantidadM{
+    font-family: var(--fuentePrincipal);
+    color: var(--secundario);
+    background-color: var(--amarillo);
+    border: .5rem solid #F5D655;
+    border-radius: 50%;
 }
 
 .navegacion__enlace:last-of-type{
