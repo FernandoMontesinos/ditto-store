@@ -7,6 +7,7 @@ const templateProducto = document.getElementById('producto-template').content; /
 const templateFooter = document.getElementById('footer-template').content;
 const templateCarrito = document.getElementById('carrito-template').content;
 const templateNavegacionCantidad = document.getElementById('template-navcantidad').content;
+const botonNavegacionCarrito = document.getElementById('carrito-nav');
 //const cantidadNavegacion = document.getElementById('cantidadnav').content;
 
 const fragment = document.createDocumentFragment();
@@ -168,3 +169,4 @@ const btnAccion = e => {
     
     e.stopPropagation()
 }
+
