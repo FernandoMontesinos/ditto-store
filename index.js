@@ -62,6 +62,11 @@ const agregarCarrito = e => {
     e.stopPropagation()
 }
 
+// Mostrar Pop Up
+
+
+
+
 const modificarCarrito = objeto => {
     //console.log(objeto);
     const producto = {
@@ -170,3 +175,5 @@ const btnAccion = e => {
     e.stopPropagation()
 }
 
+
+/*POP UP*/

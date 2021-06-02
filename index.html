@@ -24,17 +24,21 @@
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo pri" href="index.html">Tienda</a>
         <a class="navegacion__enlace se" href="nosotros.html">Nosotros</a>
-        <a  href="#carrito" id="carrito-nav" class="carrito-nav"><!--No olvidar de colocar el #carrito mediante el html y el id carrito-nav--><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-shopping-cart" width="50" height="50" viewBox="0 0 24 24"
-                stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <a href="#carrito" id="carrito-nav" class="carrito-nav">
+            <!--No olvidar de colocar el #carrito mediante el html y el id carrito-nav--><svg
+                xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="50"
+                height="50" viewBox="0 0 24 24" stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <circle cx="6" cy="19" r="2" />
                 <circle cx="17" cy="19" r="2" />
                 <path d="M17 17h-11v-14h-2" />
                 <path d="M6 5l14 1l-1 7h-13" />
-            </svg><span id="carritonav"> <template id="template-navcantidad"><span id="cantidadM">2</span></template></span></a> <!--Poner esto dentro de un template xd-->
-    <!--Codigo arregladooo me olvide de cerrar la etiqueta a y estuve 3 dias pensando que era el JavaScritp xd -->
-        </nav>
+            </svg><span id="carritonav"> <template id="template-navcantidad"><span
+                        id="cantidadM">2</span></template></span></a>
+        <!--Poner esto dentro de un template xd-->
+        <!--Codigo arregladooo me olvide de cerrar la etiqueta a y estuve 3 dias pensando que era el JavaScritp xd -->
+    </nav>
     <!--Productos-->
     <main class="contenedor animate__animated animate__slideInUp">
         <h1>Nuestros Productos</h1>
@@ -80,7 +84,7 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <th scope="row"><img class="imagen__carrito" src="img/img1.jpg" id="imagen__carro"  alt="imagen"></th>
+                <th scope="row"><img class="imagen__carrito" src="img/img1.jpg" id="imagen__carro" alt="imagen"></th>
                 <th id="carrito-nombre">Crater</th>
                 <th id="carrito-cantidad">1</th>
                 <td>
@@ -96,15 +100,15 @@
         </template>
         <template id="footer-template">
             <tr class="result">
-            <th scope="row" colspan="1" class="total-scope">Total Productos</th>
-            <td>10</td>
-            <td>
-                <button class="vaciar-carrito" id="vaciar-carrito">
-                    Eliminar Todo
-                </button>
-            </td>
-            <td class="total">S/. <span>65</span></td>
-        </tr>
+                <th scope="row" colspan="1" class="total-scope">Total Productos</th>
+                <td>10</td>
+                <td>
+                    <button class="vaciar-carrito" id="vaciar-carrito">
+                        Eliminar Todo
+                    </button>
+                </td>
+                <td class="total">S/. <span>65</span></td>
+            </tr>
         </template>
     </div>
 
@@ -113,6 +117,57 @@
         <p class="footer__text">Ditto Tiendas - Todos los derechos reservados 2021</p>
     </footer>
 
+    <!--POP UP JQUERY-->
+    <!-- <div id="popup" style="display: flex;">
+        <div class="content-popup">
+            <div class="close"><a href="#" id="close"><img src="images/close.png"/></a></div>
+            <div>
+                <h2>Contenido POPUP</h2>
+                <p>Lorem Ipsum...</p>
+                <div style="float:left; width:100%;">
+            </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="popup-overlay"></div> -->
+
+    <div class="overlay" id="popup-container">
+            <div class="contenido-popup">
+                <!--Boton de cerrar-->
+                <div class="btn-cerrar"  id="close"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-x" width="35" height="35" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg></a></div>
+                <div>
+                    <!--Icono Listo-->
+                    <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check"
+                            width="150" height="150" viewBox="0 0 24 24" stroke-width="1.1" stroke="#F5D655" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M9 12l2 2l4 -4" />
+                        </svg></div>
+                    <h2>Pulsera Valentino G</h2>
+                    <h2>Agregada satisfactoriamente al carrito!</h2>
+                    <div class="botones">
+                        <a href="#"><input type="submit" value="Seguir comprando" class="btn-seguir"></input></a>
+                        <a href="#carrito"><input type="submit" value="Ir al carrito" class="btn-ir"></a>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+
+
+
+
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 
