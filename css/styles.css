@@ -264,12 +264,11 @@ header{
     animation-delay: 1s;
 }
 
-@media (max-width: 420px){
+@media(max-width: 420px){
     .grid{
         grid-template-columns: 1fr;
     }
 }
-
 
 @media (min-width: 768px){
     .grid{

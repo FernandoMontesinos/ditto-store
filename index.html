@@ -24,17 +24,21 @@
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo pri" href="index.html">Tienda</a>
         <a class="navegacion__enlace se" href="nosotros.html">Nosotros</a>
-        <a  href="#carrito" id="carrito-nav" class="carrito-nav"><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-shopping-cart" width="50" height="50" viewBox="0 0 24 24"
-                stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <a href="#carrito" id="carrito-nav" class="carrito-nav">
+            <!--No olvidar de colocar el #carrito mediante el html y el id carrito-nav--><svg
+                xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="50"
+                height="50" viewBox="0 0 24 24" stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <circle cx="6" cy="19" r="2" />
                 <circle cx="17" cy="19" r="2" />
                 <path d="M17 17h-11v-14h-2" />
                 <path d="M6 5l14 1l-1 7h-13" />
-            </svg><span id="carritonav"> <template id="template-navcantidad"><span id="cantidadM">2</span></template></span></a> <!--Poner esto dentro de un template xd-->
-    <!--Codigo arregladooo me olvide de cerrar la etiqueta a y estuve 3 dias pensando que era el JavaScritp xd -->
-        </nav>
+            </svg><span id="carritonav"> <template id="template-navcantidad"><span
+                        id="cantidadM">2</span></template></span></a>
+        <!--Poner esto dentro de un template xd-->
+        <!--Codigo arregladooo me olvide de cerrar la etiqueta a y estuve 3 dias pensando que era el JavaScritp xd -->
+    </nav>
     <!--Productos-->
     <main class="contenedor animate__animated animate__slideInUp">
         <h1>Nuestros Productos</h1>
@@ -80,7 +84,7 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <th scope="row"><img class="imagen__carrito" src="img/img1.jpg" id="imagen__carro"  alt="imagen"></th>
+                <th scope="row"><img class="imagen__carrito" src="img/img1.jpg" id="imagen__carro" alt="imagen"></th>
                 <th id="carrito-nombre">Crater</th>
                 <th id="carrito-cantidad">1</th>
                 <td>
@@ -96,15 +100,15 @@
         </template>
         <template id="footer-template">
             <tr class="result">
-            <th scope="row" colspan="1" class="total-scope">Total Productos</th>
-            <td>10</td>
-            <td>
-                <button class="vaciar-carrito" id="vaciar-carrito">
-                    Eliminar Todo
-                </button>
-            </td>
-            <td class="total">S/. <span>65</span></td>
-        </tr>
+                <th scope="row" colspan="1" class="total-scope">Total Productos</th>
+                <td>10</td>
+                <td>
+                    <button class="vaciar-carrito" id="vaciar-carrito">
+                        Eliminar Todo
+                    </button>
+                </td>
+                <td class="total">S/. <span>65</span></td>
+            </tr>
         </template>
         <template id="boton-ircomprar">
             <input type="submit" value="xd">
@@ -142,11 +146,9 @@
     <footer class="footer">
         <p class="footer__text">Ditto Tiendas - Todos los derechos reservados 2021</p>
     </footer>
-
-
-
-   <!--Scripts-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 
