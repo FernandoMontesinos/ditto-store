@@ -24,7 +24,7 @@
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo pri" href="index.html">Tienda</a>
         <a class="navegacion__enlace se" href="nosotros.html">Nosotros</a>
-        <a  href="#carrito" id="carrito-nav" class="carrito-nav"><!--No olvidar de colocar el #carrito mediante el html y el id carrito-nav--><svg xmlns="http://www.w3.org/2000/svg"
+        <a  href="#carrito" id="carrito-nav" class="carrito-nav"><svg xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-shopping-cart" width="50" height="50" viewBox="0 0 24 24"
                 stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -106,13 +106,47 @@
             <td class="total">S/. <span>65</span></td>
         </tr>
         </template>
+        <template id="boton-ircomprar">
+            <input type="submit" value="xd">
+        </template>
     </div>
+
+    <!--Popup-->
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <!--Icono de cerrar-->
+            <a class="btn-cerrar" id="cerrar-btn"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg></a>
+              <!--ICONO DE LISTO-->
+            <div class="iconcheck"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.2" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 12l2 2l4 -4" />
+              </svg></div>
+              <!--TEXTO AÑADIDO-->
+            <h2>Pulsera añadida</h2>
+            <h2>correctamente al carrito!</h2>
+            <!--PARTE DE LOS BOTONES-->
+            <div class="botones">
+                <input type="submit" value="Seguir Comprando" class="btn-seguir" id="btn-seguir">
+                <a href="#carrito"><input type="submit" value="Ir al Carrito" class="btn-ir" id="btn-ir"></a>    
+            </div>
+        </div>
+    </div>
+
 
     <!--FOOTER-->
     <footer class="footer">
         <p class="footer__text">Ditto Tiendas - Todos los derechos reservados 2021</p>
     </footer>
 
+
+
+   <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 

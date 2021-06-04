@@ -264,7 +264,11 @@ header{
     animation-delay: 1s;
 }
 
-
+@media (max-width: 420px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+}
 
 
 @media (min-width: 768px){
@@ -413,4 +417,66 @@ tr {
 #vaciar-carrito{
     height: 4rem;
     margin-top: .5rem;
+}
+
+/*POpup*/
+
+.overlay{
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background-color: var(--primario);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    text-align: center;
+}
+
+.btn-cerrar{
+    display: block;
+    text-align: right;
+}
+.btn-cerrar:hover{
+    cursor: pointer;
+}
+
+.btn-seguir{
+    font-family: var(--fuentePrincipal);
+    border: none;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--amarillo);
+    border-radius: .5rem;
+}
+
+.btn-seguir:hover{
+    font-weight: bold;
+}
+
+.btn-ir{
+    font-family: var(--fuentePrincipal);
+    border: none;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--amarillo);
+    border-radius: .5rem;
+}
+
+.btn-ir:hover{
+    font-weight: bold;
 }
