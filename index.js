@@ -86,9 +86,6 @@ const agregarCarrito = e => {
 
 // Mostrar Pop Up
 
-
-
-
 const modificarCarrito = objeto => {
     //console.log(objeto);
     const producto = {
