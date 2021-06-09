@@ -8,6 +8,13 @@
     --fuentePrincipal: 'Montserrat', sans-serif;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -39,6 +46,7 @@ img{
 .contenedor{
     max-width: 120rem;
     margin: 0 auto;
+    margin-top: 7rem;
 }
 
 h1,h2,h3{
@@ -268,6 +276,14 @@ header{
     .grid{
         grid-template-columns: 1fr;
     }
+    .navegacion__enlace{
+        font-size: 2.5rem;
+        margin-left: .8rem;
+    }
+    .navegacion{
+        display: grid;
+        background-color: black;
+    }
 }
 
 @media (min-width: 768px){
@@ -431,6 +447,7 @@ tr {
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    z-index: 10;
 }
 
 .overlay.active{
@@ -478,4 +495,110 @@ tr {
 
 .btn-ir:hover{
     font-weight: bold;
+}
+
+/*Slider Jquery*/
+ul{
+    list-style: none;
+}
+
+body{
+    font-family: var(--fuentePrincipal)
+
+}
+
+.slideshow{
+    width: 100%;
+    position: relative;
+}
+
+.slider li, ul{
+    width: 100%;
+}
+
+.slider li {
+    overflow: hidden;
+}
+
+.slider li, img{
+    width: 100%;
+}
+
+.slider .caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    flex-direction: column;    
+    padding: 1.5rem 5rem;
+
+}
+
+.pagination{
+    position: absolute;
+    top: 102%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.pagination li {
+    font-size: 1.3rem;
+    margin: .2rem .5rem;
+    color: #858585;
+    list-style: none;
+    cursor: pointer;
+}
+
+.left, .right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+    
+}
+
+.left{
+    left: 1rem;
+    width: 5rem;
+    font-size: 3.5rem;
+}
+
+.right{
+    right: 1rem;
+    width: 5rem;
+    font-size: 3.5rem;
+}
+
+@media screen and (max-width: 600px){
+    .slider .caption p{
+       display: none;
+    }
+
+    .slider .caption h1{
+        font-size: 3rem;
+    }
+
+    .left, .right{
+        font-size: 2.5rem;
+    }
+    .slider li img {
+        width: 60rem; 
+    }
+
+    .pagination{
+        display: none;
+    }
 }

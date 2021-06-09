@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DittoStore</title>
+    <!--Normalize css-->
     <link rel="stylesheet" href="css/normalize.css">
+    <!--CSS-->
     <link rel="stylesheet" href="css/styles.css">
+    <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <!--ANIMATE CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" href="img/fav.ico">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,9 +30,8 @@
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo pri" href="index.html">Tienda</a>
         <a class="navegacion__enlace se" href="nosotros.html">Nosotros</a>
-        <a href="#carrito" id="carrito-nav" class="carrito-nav">
-            <!--No olvidar de colocar el #carrito mediante el html y el id carrito-nav--><svg
-                xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="50"
+        <a href="carrito.html" id="carrito-nav" class="carrito-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="50"
                 height="50" viewBox="0 0 24 24" stroke-width="1.7" stroke="#fff" fill="none" stroke-linecap="round"
                 stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -36,9 +41,58 @@
                 <path d="M6 5l14 1l-1 7h-13" />
             </svg><span id="carritonav"> <template id="template-navcantidad"><span
                         id="cantidadM">2</span></template></span></a>
-        <!--Poner esto dentro de un template xd-->
-        <!--Codigo arregladooo me olvide de cerrar la etiqueta a y estuve 3 dias pensando que era el JavaScritp xd -->
     </nav>
+    <!--Slider--------------------------------------------------------------->
+    <div class="slideshow">
+        <ul class="slider">
+            <li>
+                <img src="img2/1.jpg" alt="1">
+                <section class="caption">
+                    <h1>Diseño Unico</h1>
+                    <p>Presentamos dentro de nuestras diversas colecciones una variedad de accesorios con un diseño único</p>
+                </section>
+            </li>
+            <li>
+                <img src="img2/2.jpg" alt="2">
+                <section class="caption">
+                    <h1>Calidad</h1>
+                    <p>Materiales de calidad y bajo el concepto animal friendly</p>
+                </section>
+            </li>
+            <li>
+                <img src="img2/3.jpg" alt="3">
+                <section class="caption">
+                    <h1>Promociones</h1>
+                    <p>Encuentra las mejores ofertas en nuestra tienda.</p>
+                </section>
+            </li>
+            <li>
+                <img src="img2/4.jpg" alt="4">
+                <section class="caption">
+                    <h1>Paga como prefieras</h1>
+                    <p>Tenemos los medios de pago más seguros y completos: Pago en efectivo, con Tarjeta, Pago BCP, Plin, Yape y Pago online.</p>
+                </section>
+            </li>
+            <li>
+                <img src="img2/5.jpg" alt="5">
+                <section class="caption">
+                    <h1>Envios</h1>
+                    <p>Tú eliges cómo quieres recibir tu pedido.Puedes recibirlo en tu casa, en la oficina o retirarlo.</p>
+                </section>
+            </li>
+        </ul>
+        <ol class="pagination">
+        </ol>
+
+        <div class="left">
+            <span class="fas fa-chevron-left"></span>
+        </div>
+        <div class="right">
+            <span class="fas fa-chevron-right"></span>
+        </div>
+    </div>
+
+
     <!--Productos-->
     <main class="contenedor animate__animated animate__slideInUp">
         <h1>Nuestros Productos</h1>
@@ -116,30 +170,36 @@
     </div>
 
     <!--Popup-->
-    <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
-            <!--Icono de cerrar-->
-            <a class="btn-cerrar" id="cerrar-btn"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg></a>
-              <!--ICONO DE LISTO-->
-            <div class="iconcheck"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="150" height="150" viewBox="0 0 24 24" stroke-width="1.2" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg></div>
-              <!--TEXTO AÑADIDO-->
-            <h2>Pulsera añadida</h2>
-            <h2>Correctamente al carrito!</h2>
-            <!--PARTE DE LOS BOTONES-->
-            <div class="botones">
-                <input type="submit" value="Seguir Comprando" class="btn-seguir" id="btn-seguir">
-                <a href="#carrito"><input type="submit" value="Ir al Carrito" class="btn-ir" id="btn-ir"></a>    
+    <template id="templatepopup">
+        <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <!--Icono de cerrar-->
+                <a class="btn-cerrar" id="cerrar-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg></a>
+                <!--ICONO DE LISTO-->
+                <div class="iconcheck"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-circle-check" width="150" height="150" viewBox="0 0 24 24"
+                        stroke-width="1.2" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M9 12l2 2l4 -4" />
+                    </svg></div>
+                <!--TEXTO AÑADIDO-->
+                <h2 class="nombrePulsera">Pulsera añadida</h2>
+                <h2>Correctamente al carrito!</h2>
+                <!--PARTE DE LOS BOTONES-->
+                <div class="botones">
+                    <input type="submit" value="Seguir Comprando" class="btn-seguir" id="btn-seguir">
+                    <a href="#carrito"><input type="submit" value="Ir al Carrito" class="btn-ir" id="btn-ir"></a>
+                </div>
             </div>
         </div>
-    </div>
+    </template>
 
     <!--FOOTER-->
     <footer class="footer">
