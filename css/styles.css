@@ -413,6 +413,18 @@ tr {
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     border-radius: 5px;
+    height: 4rem;
+    margin-top: .5rem;
+}
+
+.ir-comprar{
+    background-color: #005a40;
+    border: none;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    border-radius: 5px;
+    height: 4rem;
+    margin-top: .5rem;
 }
 
 .result{
@@ -429,10 +441,6 @@ tr {
     height: 5rem;
 }
 
-#vaciar-carrito{
-    height: 4rem;
-    margin-top: .5rem;
-}
 
 /*POpup*/
 

@@ -9,6 +9,7 @@ const templateCarrito = document.getElementById('carrito-template').content;
 const templateNavegacionCantidad = document.getElementById('template-navcantidad').content;
 const botonNavegacionCarrito = document.getElementById('carrito-nav');
 const templatePopUp = document.getElementById("templatepopup").content;
+const templateFormulario = document.getElementById('formularioTemplate').content;
 const body = document.querySelector("body");
 
 const fragment = document.createDocumentFragment();
@@ -57,6 +58,7 @@ const mostrarProductos = data => {
     productoscaja.appendChild(fragment);
 }
 
+// Le agregamos funcionanlidad al boton 
 const agregarCarrito = e => {
     //console.log(e.target.classList.contains('formulario__submit'));
 
@@ -86,8 +88,6 @@ const agregarCarrito = e => {
     }
 }
 
-// Mostrar Pop Up
-
 const modificarCarrito = objeto => {
     //console.log(objeto);
     const producto = {
@@ -103,11 +103,8 @@ const modificarCarrito = objeto => {
     }
 
     // Lo añadimos al objeto
-    carrito[producto.id] = {
-        ...producto
-    }
+    carrito[producto.id] = {...producto}
     inyectarCarrito();
-
 
 }
 
@@ -120,11 +117,9 @@ const inyectarCarrito = () => {
         templateCarrito.getElementById('carrito-cantidad').textContent = producto.cantidad
         templateCarrito.querySelector('.agregar-carrito').dataset.id = producto.id
         templateCarrito.querySelector('.restar-carrito').dataset.id = producto.id
-        //templatePopUp.querySelector(".nombrePulsera").textContent = producto.nombre
 
-        //templateCarrito.querySelector('.imagen__carrito').setAttribute("src", producto.imagen)
         const resultado = parseInt(producto.precio * producto.cantidad);
-        templateCarrito.querySelector('span').textContent = resultado // * producto.cantidad
+        templateCarrito.querySelector('span').textContent = resultado 
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
@@ -164,7 +159,7 @@ const pintarFooter = () => {
     templateNavegacionCantidad.querySelector('#cantidadM').textContent = nCantidad;
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad;
     templateFooter.querySelector('span').textContent = nPrecio;
-    //cantidadNavegacion.querySelector('.cantidadnav').textContent = nCantidad
+
 
     const clone = templateFooter.cloneNode(true);
     fragment.appendChild(clone)
@@ -179,19 +174,26 @@ const pintarFooter = () => {
         carrito = {}
         inyectarCarrito();
     })
+
+    const btnComprar = document.getElementById('ir-comprar');
+    btnComprar.addEventListener('click', () => {
+      templateFormulario.querySelector("#formularioTemplate").textContent = nCantidad;
+
+      // 
+      const clone3 = templateFormulario.cloneNode(true);
+      fragment.appendChild(clone3);
+      body.append(fragment);
+    })
 }
 
 const btnAccion = e => {
     //console.log(e.target)
-    // Con esto suma
     if (e.target.classList.contains('agregar-carrito')) {
         //console.log(carrito[e.target.dataset.id])
 
         const producto = carrito[e.target.dataset.id]
         producto.cantidad = carrito[e.target.dataset.id].cantidad + 1
-        carrito[e.target.dataset.id] = {
-            ...producto
-        }
+        carrito[e.target.dataset.id] = {...producto}
         inyectarCarrito();
     }
 
