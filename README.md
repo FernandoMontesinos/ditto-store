@@ -6,7 +6,8 @@ Project developed in HTML and CSS, adding functionality with JavaScript, to be a
 # Web:
 https://fernandomontesinos.github.io/store-carrito/
 
-#Autor 🖊
+# Autor: 🖊
+
 Fernando Montesinos
 
 
