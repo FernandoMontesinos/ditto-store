@@ -49,7 +49,8 @@
                 <img src="img2/1.jpg" alt="1">
                 <section class="caption">
                     <h1>Diseño Unico</h1>
-                    <p>Presentamos dentro de nuestras diversas colecciones una variedad de accesorios con un diseño único</p>
+                    <p>Presentamos dentro de nuestras diversas colecciones una variedad de accesorios con un diseño
+                        único</p>
                 </section>
             </li>
             <li>
@@ -70,14 +71,16 @@
                 <img src="img2/4.jpg" alt="4">
                 <section class="caption">
                     <h1>Paga como prefieras</h1>
-                    <p>Tenemos los medios de pago más seguros y completos: Pago en efectivo, con Tarjeta, Pago BCP, Plin, Yape y Pago online.</p>
+                    <p>Tenemos los medios de pago más seguros y completos: Pago en efectivo, con Tarjeta, Pago BCP,
+                        Plin, Yape y Pago online.</p>
                 </section>
             </li>
             <li>
                 <img src="img2/5.jpg" alt="5">
                 <section class="caption">
                     <h1>Envios</h1>
-                    <p>Tú eliges cómo quieres recibir tu pedido.Puedes recibirlo en tu casa, en la oficina o retirarlo.</p>
+                    <p>Tú eliges cómo quieres recibir tu pedido.Puedes recibirlo en tu casa, en la oficina o retirarlo.
+                    </p>
                 </section>
             </li>
         </ul>
@@ -110,6 +113,7 @@
             </template>
         </div>
     </main>
+    <!--Registro del cliente y productos recientes-->
 
     <!---Apartado del Carrito-->
 
@@ -170,14 +174,29 @@
     </div>
 
     <!--Formulario de compra-->
-    <template id="formularioTemplate">
-        <div class="formulario-compra" id="formulario-compra">
-            <div class="contenido-formulario">
-              <h2>Como se encuentra el día de hoy</h2>
+    <!-- <template id="formularioTemplate"> -->
+    <div class="overlay-form" id="overlay-form">
+        <div class="form-popup" id="form-popup">
+            <a class="btn-close" id="close-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></a>
+            <h2 class="text-form">Rellene sus datos para</h2>
+            <h2 class="text-form">continuar la compra</h2>
+            <div class="inputs">
+                <input type="text" class="input nombre-form" placeholder="Nombre">
+                <input type="text" class="input nombre-form" placeholder="Apellido">
+                <input type="email" class="input correo-form" placeholder="Correo">
+                <input type="number" class="input numero-form" placeholder="Numero de Telefono">
+                <input type="text" class=" input lugar-form" placeholder="Dirección">
             </div>
-
+            <!--Dia y lugar de entrega-->
         </div>
-    </template>
+    </div>
+    <!-- </template> -->
 
     <!--Popup-->
     <template id="templatepopup">

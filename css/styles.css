@@ -415,16 +415,7 @@ tr {
     border-radius: 5px;
     height: 4rem;
     margin-top: .5rem;
-}
-
-.ir-comprar{
-    background-color: #005a40;
-    border: none;
-    font-family: var(--fuentePrincipal);
-    color: var(--blanco);
-    border-radius: 5px;
-    height: 4rem;
-    margin-top: .5rem;
+    cursor: pointer;
 }
 
 .result{
@@ -441,6 +432,78 @@ tr {
     height: 5rem;
 }
 
+.ir-comprar{
+    background-color: #005a40;
+    border: none;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    border-radius: 5px;
+    height: 4rem;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+.overlay-form{
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.btn-close{
+    display: block;
+    text-align: right;
+}
+
+.text-form{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.overlay-form.activ{
+    visibility: visible;
+}
+
+.form-popup{
+    background-color: var(--primario);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    text-align: center;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border-radius: .9rem;
+    border: none;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+.input:focus{
+    border: 5px solid var(--amarillo);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
 
 /*POpup*/
 
