@@ -49,6 +49,10 @@ img{
     margin-top: 7rem;
 }
 
+.contenedor.quitar-boxproductos{
+    display: none;
+}
+
 h1,h2,h3{
     text-align: center;
     color: var(--blanco);
@@ -578,9 +582,15 @@ body{
 
 }
 
+/* Slideshow quitar-----------------------------------------------*/
+
 .slideshow{
     width: 100%;
     position: relative;
+}
+
+.slideshow.quitar-slider{ 
+    display: none;
 }
 
 .slider li, ul{

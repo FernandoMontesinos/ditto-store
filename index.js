@@ -7,7 +7,6 @@ const templateProducto = document.getElementById('producto-template').content; /
 const templateFooter = document.getElementById('footer-template').content;
 const templateCarrito = document.getElementById('carrito-template').content;
 const templateNavegacionCantidad = document.getElementById('template-navcantidad').content;
-const botonNavegacionCarrito = document.getElementById('carrito-nav');
 const templatePopUp = document.getElementById("templatepopup").content;
 const body = document.querySelector("body");
 
@@ -22,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito = JSON.parse(localStorage.getItem('carrito'));
         inyectarCarrito()
     }
+    irCarrito();
 })
 productoscaja.addEventListener('click', e => {
     agregarCarrito(e);
@@ -86,7 +86,16 @@ const agregarCarrito = e => {
     }
 }
 
-// Mostrar Pop Up
+const irCarrito = () => {
+    const botonNavegacionCarrito = document.querySelector('#carrito-nav');
+    botonNavegacionCarrito.addEventListener('click', () => {
+        const slideShow = document.querySelector('.slideshow');
+        const cajaProductos = document.querySelector('.contenedor');
+
+        slideShow.classList.add("quitar-slider");
+        cajaProductos.classList.add('quitar-boxproductos');
+    })
+}
 
 const modificarCarrito = objeto => {
     //console.log(objeto);
@@ -222,6 +231,7 @@ const btnAccion = e => {
 
     e.stopPropagation()
 }
+
 
 
 // Slider Jquery ---------------------------------------------------------------------------
