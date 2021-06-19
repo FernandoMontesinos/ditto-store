@@ -321,6 +321,23 @@ $(document).ready(function () {
         $(".slider li").hide();
         $('.slider li:nth-child(' + imgPosition + ')').fadeIn();
     }
-
-
 });
+// Login
+const form = document.getElementById('form');
+const nombreform = document.getElementById('nombre-form');
+const correo = document.getElementById('correo-form');
+const numero = document.getElementById('numero-form');
+const lugar = document.getElementById('lugar-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let compradores = Array(
+        {
+            usuarioArray: nombreform.value,
+            correoArray: correo.value,
+            numeroArray: numero.value,
+            lugarArray: lugar.value
+        }
+    );
+    localStorage.setItem('comprador',JSON.stringify(compradores));
+})

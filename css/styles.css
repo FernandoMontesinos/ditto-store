@@ -447,6 +447,8 @@ tr {
     cursor: pointer;
 }
 
+/*Formulario compra*/
+
 .overlay-form{
     background-color: rgba(0, 0, 0, .3);
     position: fixed;
@@ -509,7 +511,21 @@ input[type=number]::-webkit-outer-spin-button {
     }
 input[type=number] { -moz-appearance:textfield; }
 
-/*POpup*/
+
+.btn-form{
+    padding: 1.5rem;
+    background-color: #005a40;
+    border: none;
+    border-radius: 1rem;
+    color: var(--blanco);
+    transition: font-size .3s ease-in-out;
+}
+
+.btn-form:hover{  
+    font-size: 2rem;
+}
+
+/*PopUp Producto Agregado*/
 
 .overlay{
     background-color: rgba(0, 0, 0, .3);
@@ -683,3 +699,4 @@ body{
         display: none;
     }
 }
+
