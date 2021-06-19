@@ -43,10 +43,11 @@
                         id="cantidadM">2</span></template></span></a>
     </nav>
     <!--Slider--------------------------------------------------------------->
-    <div class="slideshow"><!--style="display: none;"--> 
+    <div class="slideshow animate__animated animate__backInRight">
+        <!--style="display: none;"-->
         <ul class="slider">
             <li>
-                <img src="img2/1.jpg" alt="1">
+                <img src="img/1.jpg" alt="1">
                 <section class="caption">
                     <h1>Diseño Unico</h1>
                     <p>Presentamos dentro de nuestras diversas colecciones una variedad de accesorios con un diseño
@@ -54,21 +55,21 @@
                 </section>
             </li>
             <li>
-                <img src="img2/2.jpg" alt="2">
+                <img src="img/2.jpg" alt="2">
                 <section class="caption">
                     <h1>Calidad</h1>
                     <p>Materiales de calidad y bajo el concepto animal friendly</p>
                 </section>
             </li>
             <li>
-                <img src="img2/3.jpg" alt="3">
+                <img src="img/3.jpg" alt="3">
                 <section class="caption">
                     <h1>Promociones</h1>
                     <p>Encuentra las mejores ofertas en nuestra tienda.</p>
                 </section>
             </li>
             <li>
-                <img src="img2/4.jpg" alt="4">
+                <img src="img/4.jpg" alt="4">
                 <section class="caption">
                     <h1>Paga como prefieras</h1>
                     <p>Tenemos los medios de pago más seguros y completos: Pago en efectivo, con Tarjeta, Pago BCP,
@@ -76,7 +77,7 @@
                 </section>
             </li>
             <li>
-                <img src="img2/5.jpg" alt="5">
+                <img src="img/5.jpg" alt="5">
                 <section class="caption">
                     <h1>Envios</h1>
                     <p>Tú eliges cómo quieres recibir tu pedido.Puedes recibirlo en tu casa, en la oficina o retirarlo.
@@ -97,7 +98,8 @@
 
 
     <!--Productos-->
-    <main class="contenedor animate__animated animate__slideInUp"><!--style="display:none"-->
+    <main class="contenedor animate__animated animate__slideInUp">
+        <!--style="display:none"-->
         <h1>Nuestros Productos</h1>
         <div class="grid" id="contenedor-productos">
             <!--Inicio del producto-->
@@ -106,7 +108,7 @@
                     <img id="imagen" class="producto__imagen" src="img/img1.jpg" alt="Foto del producto">
                     <div class="producto__informacion">
                         <p id="nombre" class="producto__nombre">Valentino Guinda</p>
-                        <p class="producto__precio">S./<span id="precio">25</span> </p>
+                        <p class="producto__precio">S/<span id="precio">25</span> </p>
                         <input id="btn" class="formulario__submit" type="submit" value="Agregar al Carrito">
                     </div>
                 </div>
@@ -178,21 +180,23 @@
     <div class="overlay-form" id="overlay-form">
         <div class="form-popup" id="form-popup">
             <a class="btn-close" id="close-btn"><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-            </svg></a>
-            <h2 class="text-form">Rellene sus datos para</h2>
-            <h2 class="text-form">continuar la compra</h2>
-            <div class="inputs">
-                <input type="text" class="input nombre-form" placeholder="Nombre">
-                <input type="text" class="input nombre-form" placeholder="Apellido">
-                <input type="email" class="input correo-form" placeholder="Correo">
-                <input type="number" class="input numero-form" placeholder="Numero de Telefono">
-                <input type="text" class=" input lugar-form" placeholder="Dirección">
-            </div>
+                    class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg></a>
+            <form class="form" id="form">
+                <h2 class="text-form">Rellene sus datos para</h2>
+                <h2 class="text-form">continuar la compra</h2>
+                <div class="inputs">
+                    <input type="text" class="input nombre-form" placeholder="Nombre">
+                    <input type="text" class="input nombre-form" placeholder="Apellido">
+                    <input type="email" class="input correo-form" placeholder="Correo">
+                    <input type="number" class="input numero-form" placeholder="Numero de Telefono">
+                    <input type="text" class=" input lugar-form" placeholder="Dirección">
+                </div>
+            </form>
             <!--Dia y lugar de entrega-->
         </div>
     </div>
@@ -237,7 +241,7 @@
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

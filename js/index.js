@@ -13,7 +13,6 @@ const body = document.querySelector("body");
 const fragment = document.createDocumentFragment();
 let carrito = {}
 
-
 // Esperamos a que el documento este listo
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
@@ -47,10 +46,16 @@ const fetchData = async () => {
 const mostrarProductos = data => {
     data.forEach(producto => {
         // Le agregamos el valor seguún el JSON
-        templateProducto.getElementById('nombre').textContent = producto.nombre
-        templateProducto.getElementById('precio').textContent = producto.precio
-        templateProducto.getElementById('imagen').setAttribute("src", producto.imagen)
-        templateProducto.getElementById('btn').dataset.id = producto.id
+        const {
+            nombre,
+            precio,
+            imagen,
+            id
+        } = producto;
+        templateProducto.getElementById('nombre').textContent = nombre
+        templateProducto.getElementById('precio').textContent = precio
+        templateProducto.getElementById('imagen').setAttribute("src", imagen)
+        templateProducto.getElementById('btn').dataset.id = id
         const clone = templateProducto.cloneNode(true);
         fragment.appendChild(clone)
     })
@@ -73,7 +78,7 @@ const agregarCarrito = e => {
         const seguirComprando = document.getElementById('btn-seguir');
         contenedorOverlay.classList.add('active');
         contenedor.classList.add('active');
-        
+
         cerrarPopUp.addEventListener('click', function () {
             contenedorOverlay.classList.remove('active');
         })
@@ -124,11 +129,16 @@ const inyectarCarrito = () => {
     //console.log(carrito);
     productos.innerHTML = '';
     Object.values(carrito).forEach(producto => {
-        templateCarrito.querySelector('th').textContent = producto.id
-        templateCarrito.getElementById('carrito-nombre').textContent = producto.nombre
-        templateCarrito.getElementById('carrito-cantidad').textContent = producto.cantidad
-        templateCarrito.querySelector('.agregar-carrito').dataset.id = producto.id
-        templateCarrito.querySelector('.restar-carrito').dataset.id = producto.id
+        const {
+            nombre,
+            cantidad,
+            id
+        } = producto
+        templateCarrito.querySelector('th').textContent = id
+        templateCarrito.getElementById('carrito-nombre').textContent = nombre
+        templateCarrito.getElementById('carrito-cantidad').textContent = cantidad
+        templateCarrito.querySelector('.agregar-carrito').dataset.id = id
+        templateCarrito.querySelector('.restar-carrito').dataset.id = id
         //templatePopUp.querySelector(".nombrePulsera").textContent = producto.nombre
 
         //templateCarrito.querySelector('.imagen__carrito').setAttribute("src", producto.imagen)
@@ -141,7 +151,7 @@ const inyectarCarrito = () => {
         fragment.appendChild(clone2)
     })
     productos.appendChild(fragment)
-    
+
 
     pintarFooter();
 
@@ -188,16 +198,16 @@ const pintarFooter = () => {
         carrito = {}
         inyectarCarrito();
     })
-    
+
     const irComprar = document.getElementById('ir-comprar');
     irComprar.addEventListener('click', () => {
         const contenedorForm = document.getElementById("overlay-form");
         const campos = document.getElementById("form-popup");
         const cerrarForm = document.getElementById("close-btn");
-        
+
         contenedorForm.classList.add('activ');
         campos.classList.add('activ');
-       
+
         cerrarForm.addEventListener('click', () => {
             contenedorForm.classList.remove('activ');
         })
@@ -235,18 +245,18 @@ const btnAccion = e => {
 
 
 // Slider Jquery ---------------------------------------------------------------------------
- $(document).ready(function () {
+$(document).ready(function () {
     let imgItems = $(".slider li").length; // Numero de imagenes
     let imgPosition = 1;
     // Para iterar sobre la paginacion
     for (i = 0; i < imgItems; i++) {
-        $(".pagination").append('<li><span class="fas fa-circle"></span></li>');    
+        $(".pagination").append('<li><span class="fas fa-circle"></span></li>');
     }
 
 
     $(".slider li").hide(); // Ocultamos las imagenes
     $(".slider li:first").show(); // Mostramos solo la primera
-    $(".pagination li:first").css({ 
+    $(".pagination li:first").css({
         "color": "#F5D655"
     });
 
@@ -255,23 +265,23 @@ const btnAccion = e => {
     $(".right span").click(nextSlider);
     $(".left span").click(prevSlider);
 
-     
-    setInterval(function() {
-        nextSlider(); 
+
+    setInterval(function () {
+        nextSlider();
     }, 4000);
 
     function pagination() {
         // Para el numero de paginacion
-        var paginationPosition = $(this).index() + 1; 
+        var paginationPosition = $(this).index() + 1;
         console.log(paginationPosition);
 
         $(".slider li").hide();
-        $('.slider li:nth-child('+ paginationPosition +')').fadeIn();
-        
-        $(".pagination li").css({ 
+        $('.slider li:nth-child(' + paginationPosition + ')').fadeIn();
+
+        $(".pagination li").css({
             "color": "#858585"
         })
-        $(this).css({ 
+        $(this).css({
             "color": "#F5D655"
         });
 
@@ -279,29 +289,37 @@ const btnAccion = e => {
     }
 
     function nextSlider() {
-        if(imgPosition >= imgItems) {
-           imgPosition = 1;  
+        if (imgPosition >= imgItems) {
+            imgPosition = 1;
         } else {
             imgPosition++;
         }
-        $(".pagination li").css({ "color": "#858585"})
-        $('.pagination li:nth-child(' + imgPosition + ')').css({ "color": "#F5D655"});
-        
+        $(".pagination li").css({
+            "color": "#858585"
+        })
+        $('.pagination li:nth-child(' + imgPosition + ')').css({
+            "color": "#F5D655"
+        });
+
         $(".slider li").hide();
-        $('.slider li:nth-child('+ imgPosition +')').fadeIn();
+        $('.slider li:nth-child(' + imgPosition + ')').fadeIn();
     }
 
     function prevSlider() {
-        if(imgPosition <= 1) {
-           imgPosition = imgItems;  
+        if (imgPosition <= 1) {
+            imgPosition = imgItems;
         } else {
             imgPosition--;
         }
-        $(".pagination li").css({ "color": "#858585"})
-        $('.pagination li:nth-child(' + imgPosition + ')').css({ "color": "#F5D655"});
-        
+        $(".pagination li").css({
+            "color": "#858585"
+        })
+        $('.pagination li:nth-child(' + imgPosition + ')').css({
+            "color": "#F5D655"
+        });
+
         $(".slider li").hide();
-        $('.slider li:nth-child('+ imgPosition +')').fadeIn();
+        $('.slider li:nth-child(' + imgPosition + ')').fadeIn();
     }
 
 
