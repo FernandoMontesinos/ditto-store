@@ -306,6 +306,7 @@ header {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .nosotros {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -339,9 +340,10 @@ header {
 
 /* Carrito de Compras*/
 
-#carrito{
+#carrito {
     min-height: calc(100vh - 20rem - 8rem);
 }
+
 
 .sin-productos {
     font-family: var(--fuentePrincipal);
@@ -359,6 +361,10 @@ header {
     font-size: 1.8rem;
     width: 80%;
     margin: 0 auto;
+    border: 1px solid var(--blanco);
+    -webkit-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #body {
@@ -546,7 +552,7 @@ input[type=number] {
 }
 
 /*Alerta nombre no válido*/
-.alerta{
+.alerta {
     padding: 1rem;
     text-align: center;
     color: var(--blanco);
@@ -590,7 +596,7 @@ input[type=number] {
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.cerrarResumen-btn{
+.cerrarResumen-btn {
     display: block;
     text-align: right;
 }

@@ -14,10 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
 function iniciarResumen() {
     // Agregamos como se muestra y como cerrarlo
     funcionalidadPopupResumen();
-    // Obtenemos el nombre y verificamos si es válido
+    // Obtenemos el nombre y verificamos si es válido y otros valores
     obtenerNombre();
+    obtenerCorreo();
+    obtenerDireccion();
+    fechaEntrega();
+    // Lo mostramos en el popup
+    mostrarResumenCompra();
     // Deshabilitamos fechas anteriores
     deshabilitarFechasAnteriores();
+    
+
 }
 
 const form = document.getElementById('form');
@@ -48,6 +55,7 @@ const obtenerNombre = () => {
 
     nombreInput.addEventListener('input', (e) => {
         const datoNombre = e.target.value.trim(); // Quitamos espacios en blanco
+        console.log(datoNombre);
 
         // Validamos que el nombre tenga mas de 3 caracteres 
         if (datoNombre.length < 5) {
@@ -83,10 +91,10 @@ const alertaMensaje = (mensaje) => {
 
 const obtenerCorreo = () => {
     const correoInput = document.getElementById('correo-form');
-
     correoInput.addEventListener('input', (e) => {
         const datoCorreo = e.target.value.trim();
         datosComprador.correo = datoCorreo;
+        console.log(datoCorreo)
     })
 }
 
@@ -96,6 +104,7 @@ const obtenerDireccion = () => {
     direccionInput.addEventListener('input', (e) => {
         const datoDireccion = e.target.value.trim();
         datosComprador.direccion = datoDireccion
+        console.log(datoDireccion);
     })
 }
 
@@ -108,11 +117,44 @@ const fechaEntrega = () => {
         if ([0].includes(dia)) { // Los domingos no realizamos entregas
             e.preventDefault();
             fechaInput.value = '';
-            mostrarAlerta('Los domingos no realizamos entregas, muchas gracias por su comprensión');
+            alertaMensaje('Los domingos no realizamos entregas, muchas gracias por su comprensión');
         } else {
-            cita.fecha = fechaInput.value;
+            const alerta = document.querySelector('.alerta');
+            if (alerta) {
+                alerta.remove();
+            }
+            const datoFecha = fechaInput.value;
+            datosComprador.fecha = datoFecha;
+            console.log(datoFecha)
         }
     });
+}
+
+// Solo nos falta mostrar los datos!!!!1**/*/*/*/*/*/*/*/*/*
+
+const mostrarResumenCompra = () => {
+    const { nombre, correo, direccion, fecha} = datosComprador;
+
+    // Seleccionamos el contenedor del resumen
+    const resumenContenedor  = document.getElementById('resumenCompra');
+
+    const nombreComprador = document.createElement('P');
+    nombreComprador.innerHTML= `<span>Nombre: </span>${nombre}`;
+
+    const correoComprador = document.createElement('P');
+    correoComprador.innerHTML= `<span>Correo: </span> ${correo}`;
+
+    const direccionComprador = document.createElement('P');
+    direccionComprador.innerHTML= `<span>Dirección </span> ${direccion}`;
+    
+    const fechaComprador = document.createElement('P');
+    fechaComprador.innerHTML= `<span>Fecha: </span> ${fecha}`;
+
+
+    resumenContenedor.appendChild(nombreComprador);
+    resumenContenedor.appendChild(correoComprador);
+    resumenContenedor.appendChild(direccionComprador);
+    resumenContenedor.appendChild(fechaComprador);
 }
 
 const deshabilitarFechasAnteriores = () => {
@@ -128,5 +170,6 @@ const deshabilitarFechasAnteriores = () => {
     const fechaDeshabilitar = `${year}-${mes < 10 ? `0${mes}` : mes}-${dia < 10 ? `0${dia}` : dia}`
 
     inputFecha.min = fechaDeshabilitar;
+ 
 }
 
