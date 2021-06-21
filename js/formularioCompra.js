@@ -99,7 +99,7 @@ const obtenerCorreo = () => {
     correoInput.addEventListener('input', (e) => {
         const datoCorreo = e.target.value.trim();
         datosComprador.correo = datoCorreo;
-        console.log(datoCorreo)
+        //console.log(datoCorreo)
     })
 }
 
@@ -109,7 +109,7 @@ const obtenerDireccion = () => {
     direccionInput.addEventListener('input', (e) => {
         const datoDireccion = e.target.value.trim();
         datosComprador.direccion = datoDireccion
-        console.log(datoDireccion);
+        //console.log(datoDireccion);
     })
 }
 
@@ -130,7 +130,7 @@ const fechaEntrega = () => {
             }
             const datoFecha = fechaInput.value;
             datosComprador.fecha = datoFecha;
-            console.log(datoFecha)
+            //console.log(datoFecha)
         }
     });
 }
@@ -147,7 +147,7 @@ const mostrarResumenCompra = () => {
 
     // Seleccionamos el contenedor del resumen
     const resumenContenedor = document.getElementById('resumenCompra');
-
+    const OverlayResumenCompra = document.getElementById('overlay-resumenCompra');
     // Lo limpiamos de datos anteriores
     while (resumenContenedor.firstChild) {
         resumenContenedor.removeChild(resumenContenedor.firstChild);
@@ -170,10 +170,13 @@ const mostrarResumenCompra = () => {
     <line x1="6" y1="6" x2="18" y2="18" />
     </svg></a>`;
     // Agregar el evento listener :) 
+    cerrarResumenCompra.addEventListener('click', () => {
+         OverlayResumenCompra.classList.remove('activado');
+    })
 
     const nombreComprador = document.createElement('P');
     nombreComprador.innerHTML = `<span>Nombre: </span>${nombre}`;
-    console.log(nombreComprador);
+    //console.log(nombreComprador);
 
     const correoComprador = document.createElement('P');
     correoComprador.innerHTML = `<span>Correo: </span> ${correo}`;
