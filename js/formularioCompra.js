@@ -14,23 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
 function iniciarResumen() {
     // Agregamos como se muestra y como cerrarlo
     funcionalidadPopupResumen();
-    // Obtenemos el nombre y verificamos si es válido y otros valores
+    // Obtenemos el nombre y verificamos si es válido 
     obtenerNombre();
+    // Correo
     obtenerCorreo();
+    // Direccion
     obtenerDireccion();
+    // Fecha 
     fechaEntrega();
     // Lo mostramos en el popup
     mostrarResumenCompra();
     // Deshabilitamos fechas anteriores
     deshabilitarFechasAnteriores();
-    
+
 
 }
 
 const form = document.getElementById('form');
 const nombreform = document.getElementById('nombre-form');
 const correo = document.getElementById('correo-form');
-const numero = document.getElementById('numero-form');
 const lugar = document.getElementById('lugar-form');
 
 const funcionalidadPopupResumen = () => form.addEventListener('submit', (e) => {
@@ -43,10 +45,13 @@ const funcionalidadPopupResumen = () => form.addEventListener('submit', (e) => {
     contenedorFormulario.classList.remove('activ');
     OverlayResumenCompra.classList.add('activado');
     contenedorResumenCompra.classList.add('activado');
+    if (OverlayResumenCompra.classList.contains('activado')) {
+        mostrarResumenCompra(); // Carga el resumen de la cita
+    }
+    // cerrarResumenCompra.addEventListener('click', (e) => {
+    //     //OverlayResumenCompra.classList.remove('activado');
+    // })
 
-    cerrarResumenCompra.addEventListener('click', () => {
-        OverlayResumenCompra.classList.remove('activado');
-    })
 
 });
 
@@ -55,7 +60,7 @@ const obtenerNombre = () => {
 
     nombreInput.addEventListener('input', (e) => {
         const datoNombre = e.target.value.trim(); // Quitamos espacios en blanco
-        console.log(datoNombre);
+        //console.log(datoNombre);
 
         // Validamos que el nombre tenga mas de 3 caracteres 
         if (datoNombre.length < 5) {
@@ -133,24 +138,53 @@ const fechaEntrega = () => {
 // Solo nos falta mostrar los datos!!!!1**/*/*/*/*/*/*/*/*/*
 
 const mostrarResumenCompra = () => {
-    const { nombre, correo, direccion, fecha} = datosComprador;
+    const {
+        nombre,
+        correo,
+        direccion,
+        fecha
+    } = datosComprador;
 
     // Seleccionamos el contenedor del resumen
-    const resumenContenedor  = document.getElementById('resumenCompra');
+    const resumenContenedor = document.getElementById('resumenCompra');
+
+    // Lo limpiamos de datos anteriores
+    while (resumenContenedor.firstChild) {
+        resumenContenedor.removeChild(resumenContenedor.firstChild);
+    }
+    // Validamos el objeto
+    if (Object.values(datosComprador).includes('')) {
+        const noDatos = document.createElement('P');
+        noDatos.textContent = 'Faltan Datos'
+        // Lo agregamos al container
+        resumenContenedor.appendChild(noDatos);
+        return;
+    }
+
+    const cerrarResumenCompra = document.createElement('P');
+    cerrarResumenCompra.innerHTML = `<a class="cerrarResumen-btn" id="cerrarResumen-btn"><svg xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5"
+    stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+    </svg></a>`;
+    // Agregar el evento listener :) 
 
     const nombreComprador = document.createElement('P');
-    nombreComprador.innerHTML= `<span>Nombre: </span>${nombre}`;
+    nombreComprador.innerHTML = `<span>Nombre: </span>${nombre}`;
+    console.log(nombreComprador);
 
     const correoComprador = document.createElement('P');
-    correoComprador.innerHTML= `<span>Correo: </span> ${correo}`;
+    correoComprador.innerHTML = `<span>Correo: </span> ${correo}`;
 
     const direccionComprador = document.createElement('P');
-    direccionComprador.innerHTML= `<span>Dirección </span> ${direccion}`;
-    
+    direccionComprador.innerHTML = `<span>Dirección: </span> ${direccion}`;
+
     const fechaComprador = document.createElement('P');
-    fechaComprador.innerHTML= `<span>Fecha: </span> ${fecha}`;
+    fechaComprador.innerHTML = `<span>Fecha: </span> ${fecha}`;
 
-
+    resumenContenedor.appendChild(cerrarResumenCompra);
     resumenContenedor.appendChild(nombreComprador);
     resumenContenedor.appendChild(correoComprador);
     resumenContenedor.appendChild(direccionComprador);
@@ -170,6 +204,5 @@ const deshabilitarFechasAnteriores = () => {
     const fechaDeshabilitar = `${year}-${mes < 10 ? `0${mes}` : mes}-${dia < 10 ? `0${dia}` : dia}`
 
     inputFecha.min = fechaDeshabilitar;
- 
-}
 
+}
