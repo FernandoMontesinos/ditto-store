@@ -3,90 +3,90 @@
         "id": 1,
         "nombre": "Valentino G",
         "precio": 20,
-        "imagen": "img/img1.jpg"
+        "imagen": "src/img/img1.jpg"
     },
     {
         "id": 2,
         "nombre": "Onix Mate",
         "precio": 25,
-        "imagen": "img/img2.jpg"
+        "imagen": "src/img/img2.jpg"
     },
     {
         "id": 3,
         "nombre": "Alonzo",
         "precio": 23,
-        "imagen": "img/img3.jpg"
+        "imagen": "src/img/img3.jpg"
     },
     {
         "id" : 4,
         "nombre": "Ganzio",
         "precio": 29,
-        "imagen": "img/img4.jpg"
+        "imagen": "src/img/img4.jpg"
     },
     {
         "id": 5,
         "nombre": "Gaettano" ,
         "precio": 27,
-        "imagen": "img/img5.jpg"
+        "imagen": "src/img/img5.jpg"
     },
     {
         "id": 6,
         "nombre": "Franco",
         "precio": 19, 
-        "imagen": "img/img6.jpg" 
+        "imagen": "src/img/img6.jpg" 
     },
     {
         "id": 7,
         "nombre": "Emilio",
         "precio": 15, 
-        "imagen": "img/img7.jpg"
+        "imagen": "src/img/img7.jpg"
     },
     {
         "id": 8,
         "nombre": "Eye of Tiger",
         "precio": 32,
-        "imagen": "img/img8.jpg"
+        "imagen": "src/img/img8.jpg"
     },
     {
         "id": 9,
         "nombre": "Valentino A",
         "precio": 27,
-        "imagen": "img/img9..jpg" 
+        "imagen": "src/img/img9..jpg" 
     },
     {
         "id": 10,
         "nombre": "Fazio",
         "precio": 23, 
-        "imagen": "img/img10.jpg" 
+        "imagen": "src/img/img10.jpg" 
     },
     {
         "id": 11,
         "nombre": "Martino",
         "precio": 24,
-        "imagen": "img/img11.jpg" 
+        "imagen": "src/img/img11.jpg" 
     },
     {
         "id": 12,
         "nombre": "Luca",
         "precio": 25, 
-        "imagen": "img/img12.jpg"  
+        "imagen": "src/img/img12.jpg"  
     },
     {
         "id": 13,
         "nombre": "MRS Bracelet",
         "precio": 30, 
-        "imagen": "img/img13.jpg"  
+        "imagen": "src/img/img13.jpg"  
     },
     {
         "id": 14,
         "nombre": "Nylon Regulable",
         "precio": 12, 
-        "imagen": "img/img14.jpg"  
+        "imagen": "src/img/img14.jpg"  
     },
     {
         "id": 15,
         "nombre": "Crater Regulable",
         "precio": 35,
-        "imagen": "img/img15.jpg"
+        "imagen": "src/img/img15.jpg"
     }
 ]

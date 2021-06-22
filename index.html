@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DittoStore</title>
     <!--Normalize css-->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="src/css/normalize.css">
     <!--CSS-->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 <body>
     <!--Logo DittoStore-->
     <header class="header">
-        <a href="index.html"><img class="header__logo" src="img/Logotipo.png" alt="Logotipo"></a>
+        <a href="index.html"><img class="header__logo" src="src/img/Logotipo.png" alt="Logotipo"></a>
     </header>
 
     <!--Navegacion -->
@@ -47,7 +47,7 @@
         <!--style="display: none;"-->
         <ul class="slider">
             <li>
-                <img src="img/1.jpg" alt="1">
+                <img src="src/img/1.jpg" alt="1">
                 <section class="caption">
                     <h1>Diseño Unico</h1>
                     <p>Presentamos dentro de nuestras diversas colecciones una variedad de accesorios con un diseño
@@ -55,21 +55,21 @@
                 </section>
             </li>
             <li>
-                <img src="img/2.jpg" alt="2">
+                <img src="src/img/2.jpg" alt="2">
                 <section class="caption">
                     <h1>Calidad</h1>
                     <p>Materiales de calidad y bajo el concepto animal friendly</p>
                 </section>
             </li>
             <li>
-                <img src="img/3.jpg" alt="3">
+                <img src="src/img/3.jpg" alt="3">
                 <section class="caption">
                     <h1>Promociones</h1>
                     <p>Encuentra las mejores ofertas en nuestra tienda.</p>
                 </section>
             </li>
             <li>
-                <img src="img/4.jpg" alt="4">
+                <img src="src/img/4.jpg" alt="4">
                 <section class="caption">
                     <h1>Paga como prefieras</h1>
                     <p>Tenemos los medios de pago más seguros y completos: Pago en efectivo, con Tarjeta, Pago BCP,
@@ -77,7 +77,7 @@
                 </section>
             </li>
             <li>
-                <img src="img/5.jpg" alt="5">
+                <img src="src/img/5.jpg" alt="5">
                 <section class="caption">
                     <h1>Envios</h1>
                     <p>Tú eliges cómo quieres recibir tu pedido.Puedes recibirlo en tu casa, en la oficina o retirarlo.
@@ -105,7 +105,7 @@
             <!--Inicio del producto-->
             <template id="producto-template">
                 <div class="producto">
-                    <img id="imagen" class="producto__imagen" src="img/img1.jpg" alt="Foto del producto">
+                    <img id="imagen" class="producto__imagen" src="src/img/img1.jpg" alt="Foto del producto">
                     <div class="producto__informacion">
                         <p id="nombre" class="producto__nombre">Valentino Guinda</p>
                         <p class="producto__precio">S/<span id="precio">25</span> </p>
@@ -144,7 +144,7 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <th scope="row"><img class="imagen__carrito" src="img/img1.jpg" id="imagen__carro" alt="imagen"></th>
+                <th scope="row"><img class="imagen__carrito" src="src/img/img1.jpg" id="imagen__carro" alt="imagen"></th>
                 <th id="carrito-nombre">Crater</th>
                 <th id="carrito-cantidad">1</th>
                 <td class="botones">
@@ -255,9 +255,9 @@
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/sliderPrincipal.js"></script>
-    <script src="js/indexPrincipal.js"></script>
-    <script src="js/formularioCompra.js"></script>
+    <script src="src/js/sliderPrincipal.js"></script>
+    <script src="src/js/indexPrincipal.js"></script>
+    <script src="src/js/formularioCompra.js"></script>
 </body>
 
 </html>
