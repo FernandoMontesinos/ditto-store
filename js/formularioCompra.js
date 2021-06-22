@@ -40,7 +40,6 @@ const funcionalidadPopupResumen = () => form.addEventListener('submit', (e) => {
     const contenedorFormulario = document.getElementById("overlay-form");
     const OverlayResumenCompra = document.getElementById("overlay-resumenCompra");
     const contenedorResumenCompra = document.getElementById("resumenCompra");
-    const cerrarResumenCompra = document.getElementById("cerrarResumen-btn");
 
     contenedorFormulario.classList.remove('activ');
     OverlayResumenCompra.classList.add('activado');

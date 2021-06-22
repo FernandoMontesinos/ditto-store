@@ -84,6 +84,13 @@ const agregarCarrito = e => {
         })
         irCarro.addEventListener('click', function () {
             contenedorOverlay.classList.remove('active');
+            const slideShow = document.querySelector('.slideshow');
+            const cajaProductos = document.querySelector('.contenedor');
+            const carrito = document.querySelector("#carrito");
+            slideShow.classList.add('quitar-slider');
+            cajaProductos.classList.add('quitar-boxproductos');
+            carrito.classList.remove('carrito-novisible');
+            carrito.classList.add('carrito-visible');
         })
         seguirComprando.addEventListener('click', function () {
             contenedorOverlay.classList.remove('active');
@@ -96,9 +103,13 @@ const irCarrito = () => {
     botonNavegacionCarrito.addEventListener('click', () => {
         const slideShow = document.querySelector('.slideshow');
         const cajaProductos = document.querySelector('.contenedor');
+        const carrito = document.querySelector("#carrito");
 
-        slideShow.classList.add("quitar-slider");
+
+        slideShow.classList.add('quitar-slider');
         cajaProductos.classList.add('quitar-boxproductos');
+        carrito.classList.remove('carrito-novisible');
+        carrito.classList.add('carrito-visible');
     })
 }
 
@@ -241,5 +252,3 @@ const btnAccion = e => {
 
     e.stopPropagation()
 }
-
-
