@@ -173,24 +173,31 @@ const mostrarResumenCompra = () => {
          OverlayResumenCompra.classList.remove('activado');
     })
 
-    const nombreComprador = document.createElement('P');
-    nombreComprador.innerHTML = `<span>Nombre: </span>${nombre}`;
-    //console.log(nombreComprador);
+    const headingConfirmacion = document.createElement('H2');
+    headingConfirmacion.innerHTML = `Confirmación de Pedido`
 
-    const correoComprador = document.createElement('P');
-    correoComprador.innerHTML = `<span>Correo: </span> ${correo}`;
+    const nombreComprador = document.createElement('P');
+    nombreComprador.innerHTML = `<span>Muchas gracias por tu compra </span>${nombre}<br> <span>su pedido ha sido registrado exitosamente.</span>`;
+
+    const headingPedido = document.createElement('H2');
+    headingPedido.innerHTML = `Datos de Entrega`
 
     const direccionComprador = document.createElement('P');
-    direccionComprador.innerHTML = `<span>Dirección: </span> ${direccion}`;
+    direccionComprador.innerHTML = `<span class="dataResumen">Dirección: </span> ${direccion}`;
 
     const fechaComprador = document.createElement('P');
-    fechaComprador.innerHTML = `<span>Fecha: </span> ${fecha}`;
+    fechaComprador.innerHTML = `<span class="dataResumen">Fecha: </span> ${fecha}`;
+
+    const correoComprador = document.createElement('P');
+    correoComprador.innerHTML = `<span>Le enviamos a su correo</span> ${correo}<br><span>Mas información sobre la entrega.</span>`;
 
     resumenContenedor.appendChild(cerrarResumenCompra);
+    resumenContenedor.appendChild(headingConfirmacion);
     resumenContenedor.appendChild(nombreComprador);
-    resumenContenedor.appendChild(correoComprador);
+    resumenContenedor.appendChild(headingPedido);
     resumenContenedor.appendChild(direccionComprador);
     resumenContenedor.appendChild(fechaComprador);
+    resumenContenedor.appendChild(correoComprador);
 }
 
 const deshabilitarFechasAnteriores = () => {

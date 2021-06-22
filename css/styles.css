@@ -444,6 +444,11 @@ tr {
     cursor: pointer;
 }
 
+.botones-compra-vaciar{
+    display: flex;
+    justify-content: space-around;
+}
+
 .vaciar-carrito {
     background-color: #c10909;
     border: none;
@@ -612,6 +617,13 @@ input[type=number] {
     display: block;
     text-align: right;
 }
+
+.dataResumen{
+    font-weight: bold;
+    color: var(--amarillo);
+    margin-top: 1rem;
+}
+
 
 /*PopUp Producto Agregado*/
 
