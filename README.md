@@ -1,13 +1,18 @@
-# ditto-store
+# Ditto Store / Tienda Online Pulseras 📿
 
-Project developed in HTML and CSS, adding functionality with JavaScript, to be able to carry out the shopping cart, which allows the user to perform operations. 
+El proyecto consiste en una tienda virtual dedicada a la venta de pulseras a nivel nacional, la página tiene el objetivo de ser lo más cómoda posible para el usuario, para que el comprador pueda tener una buena experiencia en el sitio. 
 
-# Web:
-https://fernandomontesinos.github.io/store-carrito/
+## Visita el proyecto 🖥
 
-# Autor 🖊
+- Click [Aquí](https://fernandomontesinos.github.io/store-carrito/) para ir al _proyecto_.
 
-Fernando Montesinos
+## Autor ✒️
+
+- **Fernando Montesinos Estrada** - _Desarrollador de DittoStore_ - [FernandoMontesinos](https://github.com/FernandoMontesinos)
+
+Gracias por ver 😊
+
+
 
 
 
