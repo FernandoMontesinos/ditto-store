@@ -1,4 +1,4 @@
-# store-carrito
+# ditto-store
 
 Project developed in HTML and CSS, adding functionality with JavaScript, to be able to carry out the shopping cart, which allows the user to perform operations. 
 
