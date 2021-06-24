@@ -4,7 +4,7 @@ El proyecto consiste en una tienda virtual dedicada a la venta de pulseras a niv
 
 ## Visita el proyecto 🖥
 
-- Click [Aquí](https://fernandomontesinos.github.io/store-carrito/) para ir al _proyecto_.
+- Click [Aquí](https://fernandomontesinos.github.io/ditto-store/) para ir al _proyecto_.
 
 ## Autor ✒️
 
