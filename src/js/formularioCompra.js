@@ -134,7 +134,6 @@ const fechaEntrega = () => {
     });
 }
 
-// Solo nos falta mostrar los datos!!!!1**/*/*/*/*/*/*/*/*/*
 
 const mostrarResumenCompra = () => {
     const {

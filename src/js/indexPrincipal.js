@@ -63,7 +63,6 @@ const mostrarProductos = data => {
 }
 
 const agregarCarrito = e => {
-    //console.log(e.target.classList.contains('formulario__submit'));
 
     if (e.target.classList.contains('formulario__submit')) {
         modificarCarrito(e.target.parentElement);
@@ -194,7 +193,6 @@ const pintarFooter = () => {
     templateNavegacionCantidad.querySelector('#cantidadM').textContent = nCantidad;
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad;
     templateFooter.querySelector('span').textContent = nPrecio;
-    //cantidadNavegacion.querySelector('.cantidadnav').textContent = nCantidad
 
     const clone = templateFooter.cloneNode(true);
     fragment.appendChild(clone)
@@ -228,8 +226,7 @@ const pintarFooter = () => {
 
 
 const btnAccion = e => {
-    //console.log(e.target)
-    // Con esto suma
+    
     if (e.target.classList.contains('agregar-carrito')) {
         //console.log(carrito[e.target.dataset.id])
 
