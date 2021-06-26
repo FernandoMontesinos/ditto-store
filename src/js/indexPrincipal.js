@@ -7,7 +7,6 @@ const templateProducto = document.getElementById('producto-template').content; /
 const templateFooter = document.getElementById('footer-template').content;
 const templateCarrito = document.getElementById('carrito-template').content;
 const templateNavegacionCantidad = document.getElementById('template-navcantidad').content;
-const templatePopUp = document.getElementById("templatepopup").content;
 const body = document.querySelector("body");
 
 const fragment = document.createDocumentFragment();
@@ -62,6 +61,10 @@ const mostrarProductos = data => {
     productoscaja.appendChild(fragment);
 }
 
+const NombrePulseraPopUp = () => {
+    
+}
+
 const agregarCarrito = e => {
 
     if (e.target.classList.contains('formulario__submit')) {
@@ -99,6 +102,7 @@ const agregarCarrito = e => {
 
 const irCarrito = () => {
     const botonNavegacionCarrito = document.querySelector('#carrito-nav');
+    // Pasar al Carrito de compras
     botonNavegacionCarrito.addEventListener('click', () => {
         const slideShow = document.querySelector('.slideshow');
         const cajaProductos = document.querySelector('.contenedor');
@@ -114,12 +118,17 @@ const irCarrito = () => {
 
 const modificarCarrito = objeto => {
     //console.log(objeto);
+    
     const producto = {
         id: objeto.querySelector('.formulario__submit').dataset.id,
         nombre: objeto.querySelector('#nombre').textContent,
         precio: objeto.querySelector('#precio').textContent,
-        cantidad: 1
+        cantidad: 1,
     }
+
+    // Mostramos el valor del nombre por el PopUps
+    const NombrePulseraPopUp = document.querySelector('.nombrePulsera');
+    NombrePulseraPopUp.innerHTML = `Pulsera ${producto.nombre} añadida`
     // Verificar si ya existe uno anteriormente para agregarle otro
     if (carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1
@@ -127,17 +136,15 @@ const modificarCarrito = objeto => {
     }
 
     // Lo añadimos al objeto
-    carrito[producto.id] = {
-        ...producto
-    }
+    carrito[producto.id] = {...producto}
     inyectarCarrito();
-
-
 }
+
 
 const inyectarCarrito = () => {
     //console.log(carrito);
     productos.innerHTML = '';
+    
     Object.values(carrito).forEach(producto => {
         const {
             nombre,
@@ -149,16 +156,12 @@ const inyectarCarrito = () => {
         templateCarrito.getElementById('carrito-cantidad').textContent = cantidad
         templateCarrito.querySelector('.agregar-carrito').dataset.id = id
         templateCarrito.querySelector('.restar-carrito').dataset.id = id
-        //templatePopUp.querySelector(".nombrePulsera").textContent = producto.nombre
 
-        //templateCarrito.querySelector('.imagen__carrito').setAttribute("src", producto.imagen)
         const resultado = parseInt(producto.precio * producto.cantidad);
         templateCarrito.querySelector('span').textContent = resultado // * producto.cantidad
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
-        const clone2 = templatePopUp.cloneNode(true);
-        fragment.appendChild(clone2)
     })
     productos.appendChild(fragment)
 

@@ -36,6 +36,8 @@ const correo = document.getElementById('correo-form');
 const lugar = document.getElementById('lugar-form');
 
 const funcionalidadPopupResumen = () => form.addEventListener('submit', (e) => {
+    carrito = {};
+    inyectarCarrito();
     e.preventDefault();
     const contenedorFormulario = document.getElementById("overlay-form");
     const OverlayResumenCompra = document.getElementById("overlay-resumenCompra");
@@ -169,7 +171,8 @@ const mostrarResumenCompra = () => {
     </svg></a>`;
     // Agregar el evento listener :) 
     cerrarResumenCompra.addEventListener('click', () => {
-         OverlayResumenCompra.classList.remove('activado');
+        OverlayResumenCompra.classList.remove('activado');
+        carrito = {}
     })
 
     const headingConfirmacion = document.createElement('H2');
