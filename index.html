@@ -127,7 +127,7 @@
             <table class="table">
                 <thead>
                     <tr class="heading-table">
-                        <th scope="col" class="heads">#</th>
+                        <th scope="col" class="heads">Imagen</th>
                         <th scope="col" class="heads">Producto</th>
                         <th scope="col" class="heads">Cantidad</th>
                         <th scope="col" class="heads">Acción</th>
@@ -146,7 +146,8 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <th scope="row"><img class="imagen__carrito" src="src/img/img1.jpg" id="imagen__carro" alt="imagen"></th>
+                <th><div class="containerImagenCarrito"><img class="imagenPopUp" src="" id="carrito-imagen" alt="imagen"></div></th>
+                <!-- <th scope="row"><img class="imagen__carrito" src="src/img/img1.jpg" id="imagen__carro" alt="imagen"></th> -->
                 <th id="carrito-nombre">Crater</th>
                 <th id="carrito-cantidad">1</th>
                 <td class="botones">
@@ -157,13 +158,13 @@
                         -
                     </button>
                 </td>
-                <td>S/.<span>35</span></td>
+                <td class="total-precioProducto">S/<span>35</span></td>
             </tr>
         </template>
         <template id="footer-template">
             <tr class="result">
                 <th scope="row" colspan="1" class="total-scope">Total Productos</th>
-                <td>10</td>
+                <td class="total-cantidad">10</td>
                 <td class="botones-compra-vaciar">
                     <button class="ir-comprar" id="ir-comprar">
                         Comprar
@@ -172,7 +173,7 @@
                         Eliminar Todo
                     </button>
                 </td>
-                <td class="total">S/. <span>65</span></td>
+                <td class="total">S/<span>65</span></td>
             </tr>
         </template>
     </div>

@@ -152,9 +152,10 @@ const inyectarCarrito = () => {
         const {
             nombre,
             cantidad,
-            id
+            id,
+            imagen
         } = producto
-        templateCarrito.querySelector('th').textContent = id
+        templateCarrito.getElementById('carrito-imagen').src = imagen
         templateCarrito.getElementById('carrito-nombre').textContent = nombre
         templateCarrito.getElementById('carrito-cantidad').textContent = cantidad
         templateCarrito.querySelector('.agregar-carrito').dataset.id = id
