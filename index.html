@@ -125,15 +125,6 @@
         <h1 class="head-text-carrito">Carrito de Compras</h1>
         <div class="contenido-carrito">
             <table class="table">
-                <thead>
-                    <tr class="heading-table">
-                        <th scope="col" class="heads">Imagen</th>
-                        <th scope="col" class="heads">Producto</th>
-                        <th scope="col" class="heads">Cantidad</th>
-                        <th scope="col" class="heads">Acción</th>
-                        <th scope="col" class="heads">Total</th>
-                    </tr>
-                </thead>
                 <tbody id="productos"></tbody>
                 <tfoot>
                     <tr id="footer">
@@ -146,14 +137,14 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <th><div class="containerImagenCarrito"><img class="imagenPopUp" src="" id="carrito-imagen" alt="imagen"></div></th>
-                <!-- <th scope="row"><img class="imagen__carrito" src="src/img/img1.jpg" id="imagen__carro" alt="imagen"></th> -->
-                <th id="carrito-nombre">Crater</th>
-                <th id="carrito-cantidad">1</th>
+                <td><div class="containerImagenCarrito"><img class="imagenPopUp" src="" id="carrito-imagen" alt="imagen"></div></td>
+                <td id="carrito-nombre">Crater</td>
+                <!-- <td id="carrito-cantidad">1</td> -->
                 <td class="botones">
                     <button class="agregar-carrito">
                         +
                     </button>
+                    <p id="carrito-cantidad">1</p>
                     <button class="restar-carrito">
                         -
                     </button>
@@ -165,15 +156,16 @@
             <tr class="result">
                 <th scope="row" colspan="1" class="total-scope">Total Productos</th>
                 <td class="total-cantidad">10</td>
-                <td class="botones-compra-vaciar">
-                    <button class="ir-comprar" id="ir-comprar">
-                        Comprar
-                    </button>
-                    <button class="vaciar-carrito" id="vaciar-carrito">
-                        Eliminar Todo
-                    </button>
                 </td>
                 <td class="total">S/<span>65</span></td>
+            </tr>
+            <tr class="botones-carrito">
+                <th><button class="ir-comprar" id="ir-comprar">
+                    Comprar
+                </button></th>
+                <th><button class="vaciar-carrito" id="vaciar-carrito">
+                    Vaciar Carrito
+                </button></th>
             </tr>
         </template>
     </div>

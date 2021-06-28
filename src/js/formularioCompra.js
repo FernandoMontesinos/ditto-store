@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     iniciarResumen();
 })
 
-function iniciarResumen() {
+const iniciarResumen = () => {
     // Agregamos como se muestra y como cerrarlo
     funcionalidadPopupResumen();
     // Obtenemos el nombre y verificamos si es válido 
