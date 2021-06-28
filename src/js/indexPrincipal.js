@@ -123,12 +123,15 @@ const modificarCarrito = objeto => {
         id: objeto.querySelector('.formulario__submit').dataset.id,
         nombre: objeto.querySelector('#nombre').textContent,
         precio: objeto.querySelector('#precio').textContent,
+        imagen: objeto.querySelector("#imagen").src,
         cantidad: 1,
     }
 
     // Mostramos el valor del nombre por el PopUps
     const NombrePulseraPopUp = document.querySelector('.nombrePulsera');
-    NombrePulseraPopUp.innerHTML = `Pulsera ${producto.nombre} añadida`
+    NombrePulseraPopUp.innerHTML = `Pulsera ${producto.nombre} añadida`;
+    const imagenPulseraPopUP = document.querySelector('.iconcheck');
+    imagenPulseraPopUP.innerHTML = `<img src="${producto.imagen}" class="imagenPopUp">`;
     // Verificar si ya existe uno anteriormente para agregarle otro
     if (carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1
