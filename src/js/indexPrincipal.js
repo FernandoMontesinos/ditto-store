@@ -127,7 +127,7 @@ const modificarCarrito = objeto => {
         cantidad: 1,
     }
 
-    // Mostramos el valor del nombre por el PopUps
+    // Mostramos  por el PopUp
     const NombrePulseraPopUp = document.querySelector('.nombrePulsera');
     NombrePulseraPopUp.innerHTML = `Pulsera ${producto.nombre} añadida`;
     const imagenPulseraPopUP = document.querySelector('.iconcheck');
@@ -162,7 +162,7 @@ const inyectarCarrito = () => {
         templateCarrito.querySelector('.restar-carrito').dataset.id = id
 
         const resultado = parseInt(producto.precio * producto.cantidad);
-        templateCarrito.querySelector('span').textContent = resultado // * producto.cantidad
+        templateCarrito.querySelector('span').textContent = resultado 
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)

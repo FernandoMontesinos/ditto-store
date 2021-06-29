@@ -169,7 +169,7 @@ const mostrarResumenCompra = () => {
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
     </svg></a>`;
-    // Agregar el evento listener :) 
+    // Agregar el evento  :) 
     cerrarResumenCompra.addEventListener('click', () => {
         OverlayResumenCompra.classList.remove('activado');
         carrito = {}
@@ -193,6 +193,9 @@ const mostrarResumenCompra = () => {
     const correoComprador = document.createElement('P');
     correoComprador.innerHTML = `<span>Le enviamos a su correo</span> ${correo}<br><span>Mas información sobre la entrega.</span>`;
 
+    const btnMensaje = document.createElement('P');
+    btnMensaje.innerHTML = `<a href="https://api.whatsapp.com/send?phone=+51944135068&text=Buen!%20día%20te%20saluda%20${nombre}%20te%20envío%20la%20dirección%20de%20entrega%20Dirección: ${direccion}%20me%20gustaría%20que%20fuese%20la%20siguiente%20Fecha:%20${fecha}%20,adjunto%20mi%20Correo: %20${correo}"><button class="btnMensaje">Escribenos Aquí</button></a>`
+
     resumenContenedor.appendChild(cerrarResumenCompra);
     resumenContenedor.appendChild(headingConfirmacion);
     resumenContenedor.appendChild(nombreComprador);
@@ -200,6 +203,8 @@ const mostrarResumenCompra = () => {
     resumenContenedor.appendChild(direccionComprador);
     resumenContenedor.appendChild(fechaComprador);
     resumenContenedor.appendChild(correoComprador);
+    resumenContenedor.appendChild(btnMensaje);
+
 }
 
 const deshabilitarFechasAnteriores = () => {
