@@ -195,7 +195,7 @@ const mostrarResumenCompra = () => {
     resumenContenedor.appendChild(direccionComprador);
     resumenContenedor.appendChild(fechaComprador);
     resumenContenedor.appendChild(correoComprador);
-    resumenContenedor.appendChild(btnMensaje);
+    resumenContenedor.appendChild(btnMensaje)
     
 }
 
