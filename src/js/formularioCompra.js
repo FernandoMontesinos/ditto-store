@@ -205,7 +205,7 @@ const deshabilitarFechasAnteriores = () => {
     const fechaAhora = new Date();
     const year = fechaAhora.getFullYear();
     const mes = fechaAhora.getMonth() + 1;
-    const dia = fechaAhora.getDate() + 1;
+    const dia = fechaAhora.getDate();
 
     // Formato deseado: AAAA-MM-DD
 
