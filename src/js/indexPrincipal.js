@@ -61,10 +61,6 @@ const mostrarProductos = data => {
     productoscaja.appendChild(fragment);
 }
 
-const NombrePulseraPopUp = () => {
-    
-}
-
 const agregarCarrito = e => {
 
     if (e.target.classList.contains('formulario__submit')) {

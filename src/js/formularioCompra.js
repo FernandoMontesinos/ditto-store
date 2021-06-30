@@ -152,14 +152,6 @@ const mostrarResumenCompra = () => {
     while (resumenContenedor.firstChild) {
         resumenContenedor.removeChild(resumenContenedor.firstChild);
     }
-    // Validamos el objeto
-    if (Object.values(datosComprador).includes('')) {
-        const noDatos = document.createElement('P');
-        noDatos.textContent = 'Faltan Datos'
-        // Lo agregamos al container
-        resumenContenedor.appendChild(noDatos);
-        return;
-    }
 
     const cerrarResumenCompra = document.createElement('P');
     cerrarResumenCompra.innerHTML = `<a class="cerrarResumen-btn" id="cerrarResumen-btn"><svg xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +187,7 @@ const mostrarResumenCompra = () => {
 
     const btnMensaje = document.createElement('P');
     btnMensaje.innerHTML = `<a href="https://api.whatsapp.com/send?phone=+51944135068&text=Buen!%20día%20te%20saluda%20${nombre}%20te%20envío%20la%20dirección%20de%20entrega%20Dirección: ${direccion}%20me%20gustaría%20que%20fuese%20la%20siguiente%20Fecha:%20${fecha}%20,adjunto%20mi%20Correo: %20${correo}"><button class="btnMensaje">Escribenos Aquí</button></a>`
-
+   
     resumenContenedor.appendChild(cerrarResumenCompra);
     resumenContenedor.appendChild(headingConfirmacion);
     resumenContenedor.appendChild(nombreComprador);
@@ -204,7 +196,7 @@ const mostrarResumenCompra = () => {
     resumenContenedor.appendChild(fechaComprador);
     resumenContenedor.appendChild(correoComprador);
     resumenContenedor.appendChild(btnMensaje);
-
+    
 }
 
 const deshabilitarFechasAnteriores = () => {
