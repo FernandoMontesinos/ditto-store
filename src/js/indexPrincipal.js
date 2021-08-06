@@ -165,7 +165,6 @@ const inyectarCarrito = () => {
     })
     productos.appendChild(fragment)
 
-
     pintarFooter();
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -215,7 +214,7 @@ const pintarFooter = () => {
     irComprar.addEventListener('click', () => {
         const contenedorForm = document.getElementById("overlay-form");
         const campos = document.getElementById("form-popup");
-        const cerrarForm = document.getElementById("close-btn");
+            const cerrarForm = document.getElementById("close-btn");
 
         contenedorForm.classList.add('activ');
         campos.classList.add('activ');

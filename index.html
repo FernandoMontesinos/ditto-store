@@ -106,7 +106,6 @@
             <!--Inicio del producto-->
             <template id="producto-template">
                 <div class="producto">
-                    
                     <div class="producto__informacion">
                         <img id="imagen" class="producto__imagen" src="src/img/img1.jpg" alt="Foto del producto">
                         <p id="nombre" class="producto__nombre">Valentino Guinda</p>
@@ -138,7 +137,10 @@
 
         <template id="carrito-template">
             <tr class="fila-carrito">
-                <td><div class="containerImagenCarrito"><img class="imagenPopUp" src="" id="carrito-imagen" alt="imagen"></div></td>
+                <td>
+                    <div class="containerImagenCarrito"><img class="imagenPopUp" src="" id="carrito-imagen"
+                            alt="imagen"></div>
+                </td>
                 <td id="carrito-nombre">Crater</td>
                 <!-- <td id="carrito-cantidad">1</td> -->
                 <td class="botones">
@@ -162,17 +164,17 @@
             </tr>
             <tr class="botones-carrito">
                 <th><button class="ir-comprar" id="ir-comprar">
-                    Comprar
-                </button></th>
+                        Comprar
+                    </button></th>
                 <th><button class="vaciar-carrito" id="vaciar-carrito">
-                    Vaciar Carrito
-                </button></th>
+                        Vaciar Carrito
+                    </button></th>
             </tr>
         </template>
     </div>
 
     <!--Formulario de compra-->
-   
+
     <div class="overlay-form" id="overlay-form">
         <div class="form-popup" id="form-popup">
             <a class="btn-close" id="close-btn"><svg xmlns="http://www.w3.org/2000/svg"
@@ -186,62 +188,64 @@
                 <h2 class="text-form">Rellene sus datos para</h2>
                 <h2 class="text-form">continuar la compra</h2>
                 <div class="inputs" id="form-inputs">
-                    <input type="text" class="input nombre-form" id="nombre-form" placeholder="Nombre y Apellido" required>
+                    <input type="text" class="input nombre-form" id="nombre-form" placeholder="Nombre y Apellido"
+                        required>
                     <input type="email" class="input correo-form" id="correo-form" placeholder="Correo" required>
                     <input type="text" class=" input lugar-form" id="lugar-form" placeholder="Dirección" required>
-                    <input type="date" class=" input fecha-form" id="fecha-form" min="2021-06-30" placeholder="Fecha de Entrega" required>
+                    <input type="date" class=" input fecha-form" id="fecha-form" min="2021-06-30"
+                        placeholder="Fecha de Entrega" required>
                     <button type="submit" class="btn-form">Confirmar Compra</button>
                 </div>
             </form>
-            
+
         </div>
     </div>
-    
+
 
     <!--Resumen de compra-->
     <div class="overlay-resumenCompra" id="overlay-resumenCompra">
         <div id="resumenCompra" class="resumenCompra">
             <a class="cerrarResumen-btn" id="cerrarResumen-btn"><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-            </svg></a>
+                    class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg></a>
             <h2>Muchas gracias por su compra</h2>
-         </div>
+        </div>
     </div>
 
     <!--Popup-->
     <!-- <template id="templatepopup"> -->
-        <div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-                <!--Icono de cerrar-->
-                <a class="btn-cerrar" id="cerrar-btn"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24"
-                        stroke-width="1.5" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg></a>
-                <!--ICONO DE LISTO-->
-                <div class="iconcheck"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-circle-check" width="150" height="150" viewBox="0 0 24 24"
-                        stroke-width="1.2" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M9 12l2 2l4 -4" />
-                    </svg></div>
-                <!--TEXTO AÑADIDO-->
-                <h2 class="nombrePulsera">Pulsera añadida</h2>
-                <h2>Correctamente al carrito!</h2>
-                <!--PARTE DE LOS BOTONES-->
-                <div class="botonesPopUp">
-                    <input type="submit" value="Seguir Comprando" class="btn-seguir" id="btn-seguir">
-                    <a href="#carrito"><input type="submit" value="Ir al Carrito" class="btn-ir" id="btn-ir"></a>
-                </div>
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <!--Icono de cerrar-->
+            <a class="btn-cerrar" id="cerrar-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg></a>
+            <!--ICONO DE LISTO-->
+            <div class="iconcheck"><svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-circle-check" width="150" height="150" viewBox="0 0 24 24"
+                    stroke-width="1.2" stroke="#F5D655" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M9 12l2 2l4 -4" />
+                </svg></div>
+            <!--TEXTO AÑADIDO-->
+            <h2 class="nombrePulsera">Pulsera añadida</h2>
+            <h2>Correctamente al carrito!</h2>
+            <!--PARTE DE LOS BOTONES-->
+            <div class="botonesPopUp">
+                <input type="submit" value="Seguir Comprando" class="btn-seguir" id="btn-seguir">
+                <a href="#carrito"><input type="submit" value="Ir al Carrito" class="btn-ir" id="btn-ir"></a>
             </div>
         </div>
+    </div>
     <!-- </template> -->
 
     <!--FOOTER-->

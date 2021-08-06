@@ -423,10 +423,14 @@ header {
 
 
 td {
-    display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 500
+}
+
+#carrito-nombre{
+    display: flex;
+    align-items: center;
 }
 
 .total{
@@ -469,10 +473,9 @@ tr {
 .containerImagenCarrito > img{
     margin-top: 1rem ;
     width: 100%;
-	height: 10rem;
-	object-fit: cover;
-	background-color: #fff;
-	border: none;
+	    height: 10rem;
+	    object-fit: cover;
+	    background-color: #fff;
 }
  
 .heading-table {

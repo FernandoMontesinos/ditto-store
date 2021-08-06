@@ -26,8 +26,6 @@ const iniciarResumen = () => {
     mostrarResumenCompra();
     // Deshabilitamos fechas anteriores
     deshabilitarFechasAnteriores();
-
-
 }
 
 const form = document.getElementById('form');
@@ -195,8 +193,7 @@ const mostrarResumenCompra = () => {
     resumenContenedor.appendChild(direccionComprador);
     resumenContenedor.appendChild(fechaComprador);
     resumenContenedor.appendChild(correoComprador);
-    resumenContenedor.appendChild(btnMensaje)
-    
+    resumenContenedor.appendChild(btnMensaje);
 }
 
 const deshabilitarFechasAnteriores = () => {
